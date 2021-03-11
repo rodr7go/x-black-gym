@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/theme', function() {
     return public_path('theme.index');
 })->name('theme');
+
+Route::resource('/users', UserController::class);
