@@ -7,7 +7,7 @@
 
     @component('components.basic-card')
         @slot('title')
-            <h2>Crear Usuario</h2>
+            <h4>Crear Usuario</h4>
         @endslot
 
         @slot('content')
@@ -16,11 +16,3 @@
     @endcomponent
 
 @endsection
-
-@push('scripts')
-    <script src="{{ asset('theme/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
-
-    <script>
-        $('.datemask').inputmask()
-    </script>
-@endpush

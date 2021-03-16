@@ -35,8 +35,11 @@
 
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
+<script src="{{ asset('theme/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         $('.table').DataTable();
+        $('.datemask').inputmask()
     });
 </script>

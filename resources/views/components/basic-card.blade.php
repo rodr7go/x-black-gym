@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <a href="{{ route('users.create') }}" class="btn btn-success">Crear Usuario</a>
+        {{ $title }}
     </div>
     <div class="card-body">
         {{ $content }}

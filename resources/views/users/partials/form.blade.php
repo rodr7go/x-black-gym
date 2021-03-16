@@ -49,7 +49,7 @@
         <div class="col-lg-3">
             <div class="form-group">
                 {!! Form::label('internal_user_id', 'ID del cliente') !!}
-                {!! Form::email('internal_user_id', null,['class' => 'form-control']) !!}
+                {!! Form::text('internal_user_id', null,['class' => 'form-control']) !!}
             </div>
         </div>
 
@@ -68,7 +68,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input name="registered_at" value="{{ \Carbon\Carbon::now()->toDateString() }}" type="text" class="datemask form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
+                    <input name="registered_at" value="{{ $user->registered_at ?? \Carbon\Carbon::now()->toDateString() }}" type="text" class="datemask form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                 </div>
 
             </div>
@@ -86,8 +86,8 @@
 
         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
             <a href="{{ route('users.index') }}" class="btn btn-danger" type="button">Cancelar</a>
-            <button class="btn btn-primary" type="reset">Limpiar Formulario</button>
             <button type="submit" class="btn btn-success">Guardar</button>
+            {{--            <button class="btn btn-primary" type="reset">Limpiar Formulario</button>--}}
         </div>
 
     </div>

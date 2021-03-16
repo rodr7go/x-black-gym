@@ -1,17 +1,14 @@
-@extends('layouts.app', ['breadcrumbs' => [
-    'Usuarios' => 'users',
-    'Editar' => ''
-]])
+@extends('layouts.app')
 
 @section('content')
 
-    @component('components.panel')
+    @component('components.basic-card')
         @slot('title')
-            <h2>Editar Usuario {{ $user->name }}</h2>
+            <h4>Editar Usuario {{ $user->name }}</h4>
         @endslot
 
         @slot('content')
-            @include('tenant.users.partials.form')
+            @include('users.partials.form')
         @endslot
     @endcomponent
 

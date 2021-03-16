@@ -40,12 +40,20 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        //
+        return view('users.edit', compact('user'));
     }
 
     public function update(Request $request, User $user)
     {
-        //
+        if ($request->is_admin) {
+            $request->merge([
+                'is_admin' => 1
+            ]);
+        }
+        $user->update($request->all());
+
+        return redirect()->route('users.index');
+
     }
 
     public function destroy(User $user)
