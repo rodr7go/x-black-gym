@@ -17,13 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('internal_user_id');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('internal_user_id')->nullable();
             $table->string('password')->nullable();
             $table->string('phone')->nullable();
             $table->boolean('is_admin')->default(false);
-            $table->date('register_at');
+            $table->date('registered_at');
 
             $table->rememberToken();
             $table->timestamps();

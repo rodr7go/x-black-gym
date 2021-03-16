@@ -5,14 +5,22 @@
 
 @section('content')
 
-    @component('components.panel')
+    @component('components.basic-card')
         @slot('title')
             <h2>Crear Usuario</h2>
         @endslot
 
         @slot('content')
-            @include('tenant.users.partials.form')
+            @include('users.partials.form')
         @endslot
     @endcomponent
 
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('theme/plugins/inputmask/jquery.inputmask.min.js') }}"></script>
+
+    <script>
+        $('.datemask').inputmask()
+    </script>
+@endpush

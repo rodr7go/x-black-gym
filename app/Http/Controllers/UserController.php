@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\New_;
 
 class UserController extends Controller
 {
@@ -13,25 +15,22 @@ class UserController extends Controller
         return view('users.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $user = New User();
+        return view('users.create', compact('user'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        if ($request->is_admin) {
+            $request->merge([
+                'is_admin' => 1
+            ]);
+        }
+        $user = User::create($request->all());
+
+        return redirect()->route('users.index');
     }
 
     /**
