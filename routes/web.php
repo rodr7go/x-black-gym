@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CostController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,5 @@ Route::get('/theme', function() {
 })->name('theme');
 
 Route::resource('/users', UserController::class);
+Route::resource('/payments', PaymentController::class);
 Route::resource('/costs', CostController::class);

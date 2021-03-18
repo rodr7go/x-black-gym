@@ -44,11 +44,15 @@
                         </p>
                     </a>
                 </li>
-            </ul>
 
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a href="{{ route('payments.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <p>
+                            Pagos
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="{{ route('costs.index') }}" class="nav-link">
