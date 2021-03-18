@@ -3,35 +3,33 @@
     @slot('thead')
 
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
-            <th>Email</th>
-            <th>Telefono</th>
+            <th>Monto</th>
+            <th>Meses</th>
             <th>Acciones</th>
         </tr>
     @endslot
 
     @slot('tbody')
-{{--        @foreach($costs as $cost)--}}
-{{--            <tr>--}}
-{{--                <td>{{ $cost->id }}</td>--}}
-{{--                <td>{{ $cost->name }}</td>--}}
-{{--                <td>{{ $cost->email }}</td>--}}
-{{--                <td>{{ $cost->phone }}</td>--}}
+        @foreach($costs as $cost)
+            <tr>
+                <td>{{ $cost->name }}</td>
+                <td>{{ $cost->amount }}</td>
+                <td>{{ $cost->duration_months }}</td>
 
-{{--                <td>--}}
-{{--                    <a href="{{ route('users.edit', [$cost]) }}" class="btn btn-default btn-small text-primary" title="Editar">--}}
-{{--                        <i class="fa fa-pencil-alt"></i>--}}
-{{--                    </a>--}}
+                <td>
+                    <a href="{{ route('costs.edit', [$cost]) }}" class="btn btn-default btn-small text-primary" title="Editar">
+                        <i class="fa fa-pencil-alt"></i>
+                    </a>
 
-{{--                    <a href="#" class="btn btn-default btn-small text-danger delete-user-form" data-form="#delete-form-{{$cost->id}}" title="Eliminar">--}}
-{{--                        <i class="fa fa-trash"></i>--}}
-{{--                    </a>--}}
-{{--                    {!! Form::open(['route' => ['users.destroy', $cost->id], 'method' => 'DELETE', 'id' => "delete-form-{$cost->id}", 'style' => 'display:none']) !!}--}}
-{{--                    {!! Form::close() !!}--}}
-{{--                </td>--}}
-{{--            </tr>--}}
-{{--        @endforeach--}}
+                    <a href="#" class="btn btn-default btn-small text-danger delete-user-form" data-form="#delete-form-{{$cost->id}}" title="Eliminar">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                    {!! Form::open(['route' => ['costs.destroy', $cost->id], 'method' => 'DELETE', 'id' => "delete-form-{$cost->id}", 'style' => 'display:none']) !!}
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @endforeach
     @endslot
 @endcomponent
 
