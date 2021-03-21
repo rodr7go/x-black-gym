@@ -2,40 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cost;
 use App\Models\Payment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $payments = Payment::all();
+
+        return view('payments.index', compact('payments'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $duration = Cost::where('id',$request->cost_id)->first()->duration_months;
+        $expDate = Carbon::create($request->payment_date)->addMonths($duration);
+        $request->merge([
+           'expiration_date' => $expDate
+        ]);
+
+        Payment::create($request->all());
+
+        return redirect()->route('users.index');
     }
 
     /**

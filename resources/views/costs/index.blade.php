@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'titleBreads' => 'Costos'
+])
 
 @section('content')
     @component('components.basic-card')

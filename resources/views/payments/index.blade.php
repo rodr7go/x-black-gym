@@ -1,11 +1,11 @@
 @extends('layouts.app', [
-    'titleBreads' => 'Usuarios'
+    'titleBreads' => 'Historial de Pagos'
 ])
 
 @section('content')
     @component('components.basic-card')
         @slot('title')
-            <a href="{{ route('users.create') }}" class="btn btn-success btn-sm pull-right">Crear Usuario</a>
+{{--            <a href="{{ route('payments.create') }}" class="btn btn-success btn-sm pull-right">Crear Pago</a>--}}
 
 {{--            @can('create_users')--}}
 {{--                <a href="{{ route('users.create') }}" class="btn btn-success btn-sm pull-right">Agregar</a>--}}
@@ -13,7 +13,7 @@
         @endslot
 
         @slot('content')
-            @include('users.partials.table')
+            @include('payments.partials.table')
         @endslot
     @endcomponent
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Models\Cost;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+        $costs = Cost::all()->reverse()->pluck('name', 'id');
+
+        return view('users.index', compact('users', 'costs'));
     }
 
     public function create()
