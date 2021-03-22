@@ -46,6 +46,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('attendances.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-check-circle"></i>
+                        <p>
+                            Asistencias
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('payments.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-dollar-sign"></i>
                         <p>

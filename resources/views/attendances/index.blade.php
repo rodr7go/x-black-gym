@@ -1,20 +1,11 @@
 @extends('layouts.app', [
-    'titleBreads' => 'Usuarios'
+    'titleBreads' => 'Asistencias'
 ])
 
 @section('content')
-    @if (session('message'))
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong>Cool!</strong> La asistencia se ha asignado con exito
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
     @component('components.basic-card')
-
         @slot('title')
-            <a href="{{ route('users.create') }}" class="btn btn-success btn-sm pull-right">Crear Usuario</a>
+{{--            <a href="{{ route('attendance.create') }}" class="btn btn-success btn-sm pull-right">Crear Asistencia</a>--}}
 
 {{--            @can('create_users')--}}
 {{--                <a href="{{ route('users.create') }}" class="btn btn-success btn-sm pull-right">Agregar</a>--}}
@@ -22,7 +13,7 @@
         @endslot
 
         @slot('content')
-            @include('users.partials.table')
+            @include('attendances.partials.table')
         @endslot
     @endcomponent
 

@@ -35,7 +35,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 {!! Form::label('cost_id', 'Tipo de pago') !!}
-                                {!! Form::select('cost_id', $costs, null, ['class' => 'custom-select form-control-border', 'required']) !!}
+                                {!! Form::select('cost_id', $costs, null, ['class' => 'custom-select form-control-border']) !!}
                             </div>
                         </div>
 

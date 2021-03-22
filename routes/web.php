@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\CostController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
@@ -27,3 +28,6 @@ Route::get('/theme', function() {
 Route::resource('/users', UserController::class);
 Route::resource('/payments', PaymentController::class);
 Route::resource('/costs', CostController::class);
+Route::resource('/attendances', AttendanceController::class);
+
+Route::get('users/add/attendances/{user}', [AttendanceController::class, 'store'])->name('attendances.store');

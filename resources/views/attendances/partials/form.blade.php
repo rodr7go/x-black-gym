@@ -68,11 +68,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                     </div>
-                    <input name="registered_at"
-                           value="{{ $user->registered_at ?? \Carbon\Carbon::now()->toDateString() }}"
-                           type="text" class="datemask form-control"
-                           data-inputmask-alias="datetime"
-                           data-inputmask-inputformat="yyyy-mm-dd" data-mask>
+                    <input name="registered_at" value="{{ $user->registered_at ?? \Carbon\Carbon::now()->toDateString() }}" type="text" class="datemask form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="yyyy-mm-dd" data-mask>
                 </div>
 
             </div>

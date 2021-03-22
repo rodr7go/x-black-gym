@@ -6,6 +6,7 @@
             <th>Nombre</th>
             <th>Ultimo pago</th>
             <th>Fecha de expiración</th>
+            <th>Ultima asistencia</th>
             <th>Email</th>
             <th>Telefono</th>
             <th>Acciones</th>
@@ -18,6 +19,7 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->payment_date)) : '' }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->expiration_date)) : '' }}</td>
+                <td>{{ $user->attendances->last() ? date("d-m-Y", strtotime($user->attendances->last()->date)) : '' }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone }}</td>
 
@@ -26,11 +28,15 @@
                         <i class="fa fas fa-dollar-sign"></i>
                     </button>
 
+                    <a href="{{ route('attendances.store', $user->id) }}" class="btn btn-default btn-small text-success" title="Agregar asistencia">
+                        <i class="fa fa-check-circle"></i>
+                    </a>
+
                     <a href="{{ route('users.edit', [$user]) }}" class="btn btn-default btn-small text-primary" title="Editar">
                         <i class="fa fa-pencil-alt"></i>
                     </a>
 
-                    <a href="#" class="btn btn-default btn-small text-danger delete-user-form" data-form="#delete-form-{{$user->id}}" title="Eliminar">
+                    <a href="#" class="btn btn-default btn-small text-danger delete-user-form" data-form="#delete-form-{{$user->id}}" title="Agregar pago">
                         <i class="fa fa-trash"></i>
                     </a>
 
