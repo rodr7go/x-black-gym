@@ -21,7 +21,12 @@ class AttendanceController extends Controller
         //
     }
 
-    public function store(Request $request, $user)
+    public function store(Request $request)
+    {
+
+    }
+
+    public function addAttendance($user)
     {
         $attendance = new Attendance();
         $attendance->user_id = $user;

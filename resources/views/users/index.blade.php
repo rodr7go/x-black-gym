@@ -16,6 +16,11 @@
         @slot('title')
             <a href="{{ route('users.create') }}" class="btn btn-success btn-sm pull-right">Crear Usuario</a>
 
+            <a href="{{ route('users.expiration') }}" class="btn btn-info btn-sm">
+                <i class="fa fas fa-calendar-alt"></i>
+                Proximos pagos
+            </a>
+
 {{--            @can('create_users')--}}
 {{--                <a href="{{ route('users.create') }}" class="btn btn-success btn-sm pull-right">Agregar</a>--}}
 {{--            @endcan--}}

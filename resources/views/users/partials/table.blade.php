@@ -28,7 +28,7 @@
                         <i class="fa fas fa-dollar-sign"></i>
                     </button>
 
-                    <a href="{{ route('attendances.store', $user->id) }}" class="btn btn-default btn-small text-success" title="Agregar asistencia">
+                    <a href="{{ route('user.add.attendance', $user->id) }}" class="btn btn-default btn-small text-success" title="Agregar asistencia">
                         <i class="fa fa-check-circle"></i>
                     </a>
 
