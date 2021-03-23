@@ -24,8 +24,8 @@
 
         <div class="col-lg-3">
             <div class="form-group">
-                {!! Form::label('email', 'E-Mail') !!}
-                {!! Form::email('email', null,['class' => 'form-control']) !!}
+                {!! Form::label('email', 'E-Mail *') !!}
+                {!! Form::email('email', null,['class' => 'form-control', 'required']) !!}
             </div>
         </div>
 

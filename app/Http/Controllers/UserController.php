@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        $costs = Cost::all()->reverse()->pluck('name', 'id');
+        $costs = Cost::all()->pluck('name', 'id');
 
         return view('users.index', compact('users', 'costs'));
     }
@@ -32,6 +32,7 @@ class UserController extends Controller
             ]);
         }
         $user = User::create($request->all());
+//        dd($request->all(), $user);
 
         return redirect()->route('users.index');
     }
