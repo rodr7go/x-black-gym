@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Models\Cost;
+use App\Models\Payment;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -68,6 +70,8 @@ class UserController extends Controller
 
     public function expirationDate()
     {
-        dd('jkhwervcb');
+       $expirations = Payment::with('user')->where('expiration_date', '<', Carbon::now()->addDays(5))->get();
+
+       return view('users.show_expirations', compact('expirations'));
     }
 }

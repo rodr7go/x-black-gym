@@ -32,3 +32,7 @@ Route::resource('/attendances', AttendanceController::class);
 
 Route::get('/users/add/attendances/{user}', [AttendanceController::class, 'addAttendance'])->name('user.add.attendance');
 Route::get('/users/expiration/date', [UserController::class, 'expirationDate'])->name('users.expiration');
+
+Route::get('/test', function(){
+    dd(User);
+});
