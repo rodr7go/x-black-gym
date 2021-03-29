@@ -3,6 +3,7 @@
     @slot('thead')
 
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Ultimo pago</th>
             <th>Fecha de expiración</th>
@@ -16,6 +17,7 @@
     @slot('tbody')
         @foreach($users as $user)
             <tr>
+                <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->payment_date)) : '' }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->expiration_date)) : '' }}</td>

@@ -18,21 +18,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Auth::routes();
+
 
 Route::get('/theme', function() {
     return public_path('theme.index');
 })->name('theme');
 
-Route::resource('/users', UserController::class);
-Route::resource('/payments', PaymentController::class);
-Route::resource('/costs', CostController::class);
-Route::resource('/attendances', AttendanceController::class);
+Route::group(['middleware' => 'auth'], function (){
 
-Route::get('/users/add/attendances/{user}', [AttendanceController::class, 'addAttendance'])->name('user.add.attendance');
-Route::get('/users/expiration/date', [UserController::class, 'expirationDate'])->name('users.expiration');
+    Route::resource('/users', UserController::class);
+    Route::resource('/payments', PaymentController::class);
+    Route::resource('/costs', CostController::class);
+    Route::resource('/attendances', AttendanceController::class);
 
-Route::get('/test', function(){
-    dd(User);
+    Route::get('/users/add/attendances/{user}', [AttendanceController::class, 'addAttendance'])->name('user.add.attendance');
+    Route::get('/users/expiration/date', [UserController::class, 'expirationDate'])->name('users.expiration');
+
+    Route::get('/test', function(){
+        dd(User);
+    });
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 });

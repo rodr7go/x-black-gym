@@ -78,12 +78,12 @@
             </div>
         </div>
 
-        <div class="col-lg-3">
-            <div class="form-group">
-                {!! Form::label('is_admin', 'Es admin?') !!}
-                {!! Form::checkbox('is_admin', null) !!}
-            </div>
-        </div>
+{{--        <div class="col-lg-3">--}}
+{{--            <div class="form-group">--}}
+{{--                {!! Form::label('is_admin', 'Es admin?') !!}--}}
+{{--                {!! Form::checkbox('is_admin', null) !!}--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 
     <div class="form-group">
