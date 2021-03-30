@@ -13,8 +13,8 @@
 
                         <div class="col-lg-4">
                             <div class="form-group">
-                                {!! Form::label('amount', 'Monto') !!}
-                                {!! Form::number('amount', null, ['class' => 'form-control', 'required']) !!}
+                                {!! Form::label('amount', 'Monto *') !!}
+                                {!! Form::number('amount', null, ['class' => 'form-control', 'id' => 'amount'.$user->id, 'required']) !!}
                             </div>
                         </div>
 
@@ -34,8 +34,8 @@
 
                         <div class="col-lg-4">
                             <div class="form-group">
-                                {!! Form::label('cost_id', 'Tipo de pago') !!}
-                                {!! Form::select('cost_id', $costs, null, ['class' => 'custom-select form-control-border', 'required']) !!}
+                                {!! Form::label('cost_id', 'Tipo de pago *') !!}
+                                {!! Form::select('cost_id', $costs, null, ['class' => 'custom-select form-control-border', 'id' => 'cost_id'.$user->id,'required']) !!}
                             </div>
                         </div>
 

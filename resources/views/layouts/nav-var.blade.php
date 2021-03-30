@@ -26,7 +26,10 @@
                 {{ auth()->user()->name ?? '' }} <i class="fas fa-user"></i>
             </button>
             <div class="dropdown-menu">
-                <a class="logout-btn" href="#">Cerrar sesion</a>
+                <a class="logout-btn p-2" href="#">
+                    Cerrar sesion
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>

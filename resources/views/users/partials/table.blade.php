@@ -70,9 +70,6 @@
                     e.preventDefault()
                     let userID = $(e.currentTarget).attr('data-userID');
                     $(`#modal-payment-${userID}`).modal('show');
-
-                    console.log(userID)
-
                 })
             }
         })

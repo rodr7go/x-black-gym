@@ -32,7 +32,7 @@
         <div class="col-lg-3">
             <div class="form-group">
                 {!! Form::label('password', 'Contraseña') !!}
-                {!! Form::password('password', ['class' => 'form-control']) !!}
+                {!! Form::password('password', ['class' => 'form-control', 'min' => '6']) !!}
             </div>
         </div>
 
