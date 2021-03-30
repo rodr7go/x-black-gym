@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e209ad21-de74-41d1-82db-ff601eaa9395" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/bread-crumbs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/bread-crumbs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav-var.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav-var.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/partials/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/partials/payment_modal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/partials/payment_modal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/partials/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/partials/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/partials/expirations_table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/partials/expirations_table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +185,7 @@
       <workItem from="1616607087646" duration="1288000" />
       <workItem from="1616968426850" duration="9394000" />
       <workItem from="1617037778569" duration="264000" />
-      <workItem from="1617080200070" duration="3527000" />
+      <workItem from="1617080200070" duration="6882000" />
     </task>
     <servers />
   </component>

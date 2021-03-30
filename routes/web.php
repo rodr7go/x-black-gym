@@ -42,7 +42,9 @@ Route::group(['middleware' => 'auth'], function (){
         dd(User);
     });
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::get('/payments/send/email/{id}', [PaymentController::class, 'sendPaymentReminder'])->name('payments.send.email');
 
 
 });

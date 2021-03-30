@@ -22,7 +22,7 @@
                 <td>
                     @if($expiration->user->email)
 
-                        <a href="" class="btn btn-default btn-small text-success" title="Enviar recordatorio">
+                        <a href="{{ route('payments.send.email', $expiration) }}" class="btn btn-default btn-small text-success" title="Enviar recordatorio">
                             <i class="fa fa-envelope"></i>
                         </a>
 

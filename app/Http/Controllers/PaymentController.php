@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PaymentReminder;
 use App\Models\Cost;
 use App\Models\Payment;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -78,5 +80,14 @@ class PaymentController extends Controller
     public function destroy(Payment $payment)
     {
         //
+    }
+
+    public function sendPaymentReminder($id)
+    {
+        $payment = Payment::where('id', $id)->first();
+
+        Mail::to($payment->user->email)->send(new PaymentReminder($payment));
+
+        dd('done');
     }
 }
