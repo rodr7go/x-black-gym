@@ -76,7 +76,7 @@
                     <a href="{{ route('costs.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-comment-dollar"></i>
                         <p>
-                            Costos
+                            Planes
                         </p>
                     </a>
                 </li>
