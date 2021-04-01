@@ -19,9 +19,9 @@
                 <td>{{ $payment->payment_date }}</td>
                 <td>{{ $payment->expiration_date }}</td>
                 <td>
-                    <a href="{{ route('payments.edit', [$payment]) }}" class="btn btn-default btn-small text-primary" title="Editar">
-                        <i class="fa fa-pencil-alt"></i>
-                    </a>
+{{--                    <a href="{{ route('payments.edit', [$payment]) }}" class="btn btn-default btn-small text-primary" title="Editar">--}}
+{{--                        <i class="fa fa-pencil-alt"></i>--}}
+{{--                    </a>--}}
 
                     <a href="#" class="btn btn-default btn-small text-danger delete-user-form" data-form="#delete-form-{{$payment->id}}" title="Eliminar">
                         <i class="fa fa-trash"></i>
