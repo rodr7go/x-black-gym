@@ -25,7 +25,7 @@
                 <td>
                     {{ $user->attendances->last() ? date("d-m-Y", strtotime($user->attendances->last()->date)) : '' }}
                     <br>
-                    {{ $user->attendances->last()->hour }}
+                    {{ $user->attendances->last()->hour ?? '' }}
                 </td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone }}</td>
