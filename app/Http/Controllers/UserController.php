@@ -14,10 +14,16 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::all()->where('is_admin', false);
         $costs = Cost::all()->pluck('name', 'id');
 
         return view('users.index', compact('users', 'costs'));
+    }
+
+    public function adminIndex()
+    {
+        $users = User::all()->where('is_admin', true);
+        return view('users.admins', compact('users'));
     }
 
     public function create()
@@ -28,13 +34,10 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        if ($request->is_admin) {
-            $request->merge([
-                'is_admin' => 1
-            ]);
-        }
+        $request->merge([
+            'created_by' => auth()->user()->id
+        ]);
         $user = User::create($request->all());
-//        dd($request->all(), $user);
 
         return redirect()->route('users.index');
     }
@@ -51,11 +54,10 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user)
     {
-        if ($request->is_admin) {
-            $request->merge([
-                'is_admin' => 1
-            ]);
-        }
+        $request->merge([
+            'updated_by' => auth()->user()->id
+        ]);
+
         $user->update($request->all());
 
         return redirect()->route('users.index');

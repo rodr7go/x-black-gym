@@ -16,7 +16,7 @@
                 <td>{{ $attendance->id }}</td>
                 <td>{{ $attendance->user->name }}</td>
                 <td>{{ date("d-m-Y", strtotime($attendance->date))}}</td>
-                <td>{{ date("d-m-Y", strtotime($attendance->hour))}}</td>
+                <td>{{ $attendance->hour }}</td>
 
 {{--                <td>--}}
 {{--                    <button type="button" data-userID="{{ $user->id }}" class="payment-modal btn btn-default" data-toggle="modal" data-target="#modal-payment-{{ $user->id }}">--}}

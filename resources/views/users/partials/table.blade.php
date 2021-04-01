@@ -10,6 +10,7 @@
             <th>Ultima asistencia</th>
             <th>Email</th>
             <th>Telefono</th>
+            <th>Registrado por</th>
             <th>Acciones</th>
         </tr>
     @endslot
@@ -21,9 +22,14 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->payment_date)) : '' }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->expiration_date)) : '' }}</td>
-                <td>{{ $user->attendances->last() ? date("d-m-Y", strtotime($user->attendances->last()->date)) : '' }}</td>
+                <td>
+                    {{ $user->attendances->last() ? date("d-m-Y", strtotime($user->attendances->last()->date)) : '' }}
+                    <br>
+                    {{ $user->attendances->last()->hour }}
+                </td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone }}</td>
+                <td>{{ $user->createdBy->name }}</td>
 
                 <td>
                     <button type="button" data-userID="{{ $user->id }}" class="payment-modal btn btn-default" data-toggle="modal" data-target="#modal-payment-{{ $user->id }}">

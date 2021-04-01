@@ -7,7 +7,7 @@
             <th>Nombre</th>
             <th>Correo</th>
             <th>Fecha de expiración</th>
-            <th>Acciones</th>
+{{--            <th>Acciones</th>--}}
         </tr>
     @endslot
 
@@ -19,16 +19,16 @@
                 <td>{{ $expiration->user->email }}</td>
                 <td>{{ $expiration->expiration_date }}</td>
 
-                <td>
-                    @if($expiration->user->email)
+{{--                <td>--}}
+{{--                    @if($expiration->user->email)--}}
 
-                        <a href="{{ route('payments.send.email', $expiration) }}" class="btn btn-default btn-small text-success" title="Enviar recordatorio">
-                            <i class="fa fa-envelope"></i>
-                        </a>
+{{--                        <a href="{{ route('payments.send.email', $expiration) }}" class="btn btn-default btn-small text-success" title="Enviar recordatorio">--}}
+{{--                            <i class="fa fa-envelope"></i>--}}
+{{--                        </a>--}}
 
-                    @endif
+{{--                    @endif--}}
 
-                </td>
+{{--                </td>--}}
             </tr>
         @endforeach
     @endslot

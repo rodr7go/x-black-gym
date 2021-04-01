@@ -29,6 +29,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'phone' => '5553259000',
             'registered_at' => $this->faker->date(),
+            'created_by' => 1
         ];
     }
 }

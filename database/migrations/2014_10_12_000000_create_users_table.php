@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->date('registered_at');
+            $table->integer('created_by');
+            $table->integer('updated_by')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

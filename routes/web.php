@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('/users/add/attendances/{user}', [AttendanceController::class, 'addAttendance'])->name('user.add.attendance');
     Route::get('/users/expiration/date', [UserController::class, 'expirationDate'])->name('users.expiration');
+    Route::get('/users/admins/show', [UserController::class, 'adminIndex'])->name('users.admins.index');
 
     Route::get('/test', function(){
         dd(User);

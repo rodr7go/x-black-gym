@@ -23,7 +23,9 @@ class User extends Authenticatable
         'registered_at',
         'is_admin',
         'internal_user_id',
-        'phone'
+        'phone',
+        'created_by',
+        'updated_by',
     ];
 
     /**
@@ -59,5 +61,10 @@ class User extends Authenticatable
         if ($pass) {
             $this->attributes['password'] = bcrypt($pass);
         }
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by');
     }
 }
