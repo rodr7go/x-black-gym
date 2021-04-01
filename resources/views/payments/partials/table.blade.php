@@ -14,7 +14,7 @@
     @slot('tbody')
         @foreach($payments as $payment)
             <tr>
-                <td>{{ $payment->user->name }}</td>
+                <td>{{ $payment->user->name ?? '' }}</td>
                 <td>{{ $payment->amount }}</td>
                 <td>{{ $payment->payment_date }}</td>
                 <td>{{ $payment->expiration_date }}</td>

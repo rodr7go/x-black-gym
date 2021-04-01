@@ -14,7 +14,7 @@
         @foreach($attendances as $attendance)
             <tr>
                 <td>{{ $attendance->id }}</td>
-                <td>{{ $attendance->user->name }}</td>
+                <td>{{ $attendance->user->name ?? ''}}</td>
                 <td>{{ date("d-m-Y", strtotime($attendance->date))}}</td>
                 <td>{{ $attendance->hour }}</td>
 
