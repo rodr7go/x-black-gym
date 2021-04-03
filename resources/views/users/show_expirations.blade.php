@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-    'titleBreads' => 'Proximos pagos'
+    'titleBreads' => 'Pagos que expiran en los proximos 5 días.'
 ])
 
 @section('content')

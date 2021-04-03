@@ -3,14 +3,26 @@
 ])
 
 @section('content')
-    @if (session('message'))
+    @if (session('attendance'))
+
         <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong>Cool!</strong> La asistencia se ha asignado con exito
+            <strong>Cool!</strong> La asistencia se ha asignado con exito a {{ (session('user')->name) }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
     @endif
+
+    @if (session('payment'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Cool!</strong> El pago de ${{ (session('payment')->amount) }} pesos se ha registrado con exito a {{ (session('user')->name) }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     @component('components.basic-card')
 
         @slot('title')

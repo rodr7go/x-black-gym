@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Attendance;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,9 @@ class AttendanceController extends Controller
         $attendance->hour = Carbon::now()->toTimeString();
         $attendance->save();
 
-        return redirect()->route('users.index')->with('message', 'Done');
+        $user = User::where('id', $user)->first();
+
+        return back()->with(compact('attendance', 'user'));
     }
 
     public function show(Attendance $attendance)

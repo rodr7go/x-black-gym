@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\PaymentReminder;
 use App\Models\Cost;
 use App\Models\Payment;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -26,15 +27,17 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
+
         $duration = Cost::where('id',$request->cost_id)->first()->duration_months;
         $expDate = Carbon::create($request->payment_date)->addMonths($duration);
         $request->merge([
            'expiration_date' => $expDate
         ]);
 
-        Payment::create($request->all());
+        $payment = Payment::create($request->all());
+        $user = User::find($request->user_id);
 
-        return redirect()->route('users.index');
+        return back()->with(compact('payment', 'user'));
     }
 
     /**
