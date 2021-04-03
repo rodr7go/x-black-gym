@@ -5,6 +5,7 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Plan</th>
             <th>Ultimo pago</th>
             <th>Fecha de expiración</th>
             <th>Ultima asistencia</th>
@@ -20,6 +21,7 @@
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
+                <td>{{ $user->payments->last() ? $user->payments->last()->cost->name: '' }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->payment_date)) : '' }}</td>
                 <td>{{ $user->payments->last() ? date("d-m-Y", strtotime($user->payments->last()->expiration_date)) : '' }}</td>
                 <td>
