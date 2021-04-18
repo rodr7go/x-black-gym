@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e209ad21-de74-41d1-82db-ff601eaa9395" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/partials/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/partials/table.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../experienciadigital" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -192,7 +190,12 @@
       <workItem from="1617252251380" duration="4798000" />
       <workItem from="1617297726609" duration="6028000" />
       <workItem from="1617401108473" duration="5617000" />
-      <workItem from="1617482246027" duration="613000" />
+      <workItem from="1617482246027" duration="699000" />
+      <workItem from="1617725279210" duration="554000" />
+      <workItem from="1618327256498" duration="3498000" />
+      <workItem from="1618417256425" duration="1226000" />
+      <workItem from="1618421090751" duration="779000" />
+      <workItem from="1618501345169" duration="866000" />
     </task>
     <servers />
   </component>

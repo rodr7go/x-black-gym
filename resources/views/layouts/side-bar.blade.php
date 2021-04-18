@@ -35,15 +35,25 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-
                 <li class="nav-item">
-                    <a href="{{ route('users.admins.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
+                    <a href="{{ route('costs.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-comment-dollar"></i>
                         <p>
-                            Administradores
+                            Planes
                         </p>
                     </a>
                 </li>
+
+                @if(auth()->user()->is_admin)
+                    <li class="nav-item">
+                        <a href="{{ route('users.admins.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>
+                                Administradores
+                            </p>
+                        </a>
+                    </li>
+                @endif
 
                 <li class="nav-item">
                     <a href="{{ route('users.index') }}" class="nav-link">
@@ -72,14 +82,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('costs.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-comment-dollar"></i>
-                        <p>
-                            Planes
-                        </p>
-                    </a>
-                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
