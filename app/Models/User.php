@@ -56,10 +56,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Attendance::class);
     }
-    public function setPasswordAttribute($pass)
+    public function setPasswordAttribute($password)
     {
-        if ($pass) {
-            $this->attributes['password'] = bcrypt($pass);
+        if ($password) {
+            $this->attributes['password'] = bcrypt($password);
         }
     }
 

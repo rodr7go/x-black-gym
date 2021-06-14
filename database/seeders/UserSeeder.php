@@ -53,7 +53,9 @@ class UserSeeder extends Seeder
             ]
         ];
 
-        \DB::table('users')->insert( $adminUsers);
+        foreach ($adminUsers as $adminUser) {
+            User::create($adminUser);
+        }
 //        User::factory()->count(30)->create();
     }
 }
